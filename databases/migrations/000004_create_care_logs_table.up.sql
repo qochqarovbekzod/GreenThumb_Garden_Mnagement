@@ -1,0 +1,7 @@
+CREATE TABLE care_logs (
+    id UUID DEFAULT GEN_RANDOM_UUID() PRIMARY KEY,
+    plant_id UUID NOT NULL REFERENCES plants(id),
+    action VARCHAR(50),
+    notes TEXT,
+    logged_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
